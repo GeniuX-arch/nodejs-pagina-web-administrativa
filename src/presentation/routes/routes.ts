@@ -1,8 +1,5 @@
 import {Response,Express, Request} from 'express'
 
-interface call{
-
-}
 export class Routes {
     private app:Express;
     private controllers:Controllers[];
@@ -37,8 +34,8 @@ export class Controllers {
     public getHandler(){
         return async (req: Request, res: Response) => {
         try {
-            this.body();
-            return res.status(200).json({ message: "Solicitud procesada con exito" })
+            req = this.body();
+            return res.status(200).json({message: req})
         }
         catch {
             this.erro();
