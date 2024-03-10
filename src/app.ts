@@ -1,12 +1,11 @@
-import {Server, Controllers, Routes} from './presentation/routes/routes'
+import Server from './classes/Server';
 import express, {} from 'express'
 const app= express();
+
+
+export default app;
 
 const server = new Server(app,3000);
 server.run()
 
-const controller = [new Controllers('/hola',
-()=>'Hola',
-()=>console.log("no funciona"))];
-const routes = new Routes(app,controller);
-routes.routes();
+
